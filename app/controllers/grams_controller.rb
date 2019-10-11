@@ -34,7 +34,6 @@ class GramsController < ApplicationController
   def show
     @gram = Gram.find_by_id(params[:id])
     return render_not_found if @gram.blank?
-    end
   end
 
   def edit
@@ -60,10 +59,6 @@ class GramsController < ApplicationController
     params.require(:gram).permit(:message, :picture)
   end
 
-def render_not_found(status=:not_found)
-    render plain: "#{status.to_s.titleize} :(", status: status
-  end
 
-
-
+end
 
